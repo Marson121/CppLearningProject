@@ -88,19 +88,29 @@ int main() {
     // printStudent(&stu);
     // cout << "主函数中 姓名：" << stu.name << " 年龄： " << stu.age  << " 分数：" << stu.score << endl;
 
+    //
+    // struct hero arr[5] =
+    //         {
+    //                 {"刘备", 23, "男"},
+    //                 {"关羽", 22, "男"},
+    //                 {"张飞", 20, "男"},
+    //                 {"赵云", 21, "男"},
+    //                 {"貂蝉", 19, "女"},
+    //         };
+    // int len = sizeof(arr) / sizeof(hero);
+    //
+    // bubbleSort(arr, len);
+    // printHeros(arr, len);
 
-    struct hero arr[5] =
-            {
-                    {"刘备", 23, "男"},
-                    {"关羽", 22, "男"},
-                    {"张飞", 20, "男"},
-                    {"赵云", 21, "男"},
-                    {"貂蝉", 19, "女"},
-            };
-    int len = sizeof(arr) / sizeof(hero);
+    srand((unsigned int) time(NULL));
 
-    bubbleSort(arr, len);
-    printHeros(arr, len);
+    Teacher tArray[3]; //老师数组
+
+    int len = sizeof(tArray) / sizeof(Teacher);
+
+    allocateSpace(tArray, len);
+
+    printTeacher(tArray, len);
 
 
     return 0;

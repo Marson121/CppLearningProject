@@ -77,7 +77,6 @@ void printStudent(student *stu) {
 }
 
 
-
 /**
  * 结构体数组冒泡排序
  * @param arr
@@ -113,4 +112,32 @@ void printHeros(hero arr[], int len) {
  * @param tArr
  * @param len
  */
-void allocateSpace(Teacher tArr[], int len);
+void allocateSpace(Teacher tArr[], int len) {
+    string tName = "teacher";
+    string sName = "student";
+    string nameSeed = "ABCDE";
+
+    for (int i = 0; i < len; ++i) {
+        tArr[i].name = tName + nameSeed[i];
+        for (int j = 0; j < 5; ++j) {
+            // 给当前老师的所有学生赋值
+            tArr[i].sArray[j].name = sName + nameSeed[j];
+            tArr[i].sArray[j].score = rand() % 61 + 40;
+        }
+    }
+}
+
+
+/**
+ * 打印老师结构体数组
+ * @param tArr
+ * @param len
+ */
+void printTeacher(Teacher tArr[], int len) {
+    for (int i = 0; i < len; i++) {
+        cout << tArr[i].name << endl;
+        for (int j = 0; j < 5; j++) {
+            cout << "\t姓名：" << tArr[i].sArray[j].name << " 分数：" << tArr[i].sArray[j].score << endl;
+        }
+    }
+}
